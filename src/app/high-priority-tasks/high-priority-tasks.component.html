@@ -1,0 +1,16 @@
+<div class="task-list">
+    <p *ngIf="hptasks.length === 0">🚫 No tasks found.</p>
+    <ul *ngIf="hptasks.length > 0">
+      <li class="listitem" *ngFor="let item of hptasks let i = index" >
+        📝 {{item.task}} | Priority: {{item.priority}}
+        <div [ngSwitch]="item.priority">
+          <span *ngSwitchCase="'HIGH'" class="high-priority">🔴</span>
+          <span *ngSwitchCase="'MEDIUM'" class="medium-priority">🟠</span>
+          <span *ngSwitchCase="'LOW'" class="low-priority">🟢</span>
+          <span *ngSwitchDefault class="default-priority"></span>
+        </div>
+        | Due: {{item.date}} | Status : {{item.pending ? '⏳ Pending' : '✅ Completed'}}
+        <button class="marBtn" (click)="markasRead(i)" *ngIf="item.pending">Mark As Read</button>
+      </li>
+    </ul>
+</div>
