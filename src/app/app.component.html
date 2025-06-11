@@ -14,10 +14,6 @@
         <option value="MEDIUM">Medium</option>
         <option value="LOW">Low</option>
       </select>
-      <label class="input-lables">
-        Due Date
-      </label>
-      <input [(ngModel)]="date" name="date" type="date" placeholder="due-date" />
       <button class="atbtn" (click)="btnclicked()" type="button">Add Task</button>
       <button class="atbtn" type="button" (click)="allpbtnClicked()">All Tasks</button>
       <button class="atbtn" type="button" (click)="hpbtnClicked()">high-priority</button>
@@ -27,9 +23,8 @@
     </form>
     
   </div>
-  <app-child *ngIf="allpriorities" [tasks]="tasks"></app-child>
-  <app-high-priority-tasks *ngIf="highpriorities" [hptasks]="hptasks"></app-high-priority-tasks>
+  <app-child [tasksf]="tasksf"></app-child>
+  <!-- <app-high-priority-tasks *ngIf="highpriorities" [hptasks]="hptasks"></app-high-priority-tasks>
   <app-medium-priority-tasks *ngIf="mediumpriorities" [mdtasks]="mdtasks"></app-medium-priority-tasks>
-  <app-low-priority-tasks *ngIf="lowpriorities" [lowtasks]="lowtasks"></app-low-priority-tasks>
+  <app-low-priority-tasks *ngIf="lowpriorities" [lowtasks]="lowtasks"></app-low-priority-tasks> -->
 </div>
-

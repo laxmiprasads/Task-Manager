@@ -9,9 +9,8 @@ import { Component, Input, Output } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent {
-  @Input() tasks: { task: string; priority: string; date: string; pending:boolean}[] = [];
-  
+  @Input() tasksf: { task: string; priority: string; pending:boolean}[] = [];
   markasRead(index: number) {
-    this.tasks[index].pending = false;
+    this.tasksf[index].pending = false;
   }
 }
